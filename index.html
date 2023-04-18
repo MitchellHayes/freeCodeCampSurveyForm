@@ -1,44 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Feedback Form</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
+  <head>
+    <meta charset="utf-8" />
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <header>
-        <h1 id="title">Interview Feedback Form</h1>
-        <p id="description">Use this form to submit interview feedback.</p>
+      <h1 id="title">Interview Feedback Form</h1>
+      <p id="description">Use this form to submit interview feedback.</p>
     </header>
     <form id="survey-form">
-        <label id="interviewer name label" for="interviewername">Interviewer Name</label>
-        <input type="text" id="interviewername" placeholder="John Doe" required>
-        <label id="email-label" for="email">Email</label>
-        <input type="email" id="email" placeholder="John.Doe@YourHired.com" required>
-        <label id="name-label" for="name">Candidate Name</label>
-        <input type="text" id="name" placeholder="James Smith" required>
-        <label id="cleared" for="cleared">Clearance</label>
-        <input type="checkbox" name="cleared" id="cleared" value="cleared">
-        <label id="cleared" for="notcleared">No Clearance</label>
-        <input type="checkbox" name="cleared" id="notcleared" value="notcleared">
-        <label id="number-label" for="number">How professional is the candidate?</label>
-        <input type="number" id="number" min="1" max="5" placeholder="1-5">
-        <label id="dropdown label" for="dropdown">Dropdown</label>
-        <p>Technical Knowledge (skills, aptitude, certifications, program management)</p>
-        <label id="technical knowledge" for="technicalNot">Definitely Not</label>
-        <input type="radio" name="technicalknowledge" id="technicalNot" value="Definitely Not">
-        <label id="technical knowledge" for="technicalNo">No</label>
-        <input type="radio" name="technicalknowledge" id="technicalNo" value="No">
-        <label id="technical knowledge" for="technicalUtE">Unable to Evaluate</label>
-        <input type="radio" name="technicalknowledge" id="technicalUtE" value="Unable to Evaluate">
-        <select id="dropdown">
-            <option value="Hire">Hire</option>
-            <option value="Maybe Hire">Maybe Hire</option>
-            <option value="Don't Hire">Don't Hire</option>
+      <fieldset>
+        <label for="interviewername">Interviewer Name</label>
+        <input
+          type="text"
+          id="interviewername"
+          name="interviewername"
+          placeholder="John Doe"
+          required
+        />
+
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="John.Doe@YourHired.com"
+          required
+        />
+      </fieldset>
+      <fieldset>
+        <label for="name">Candidate Name</label>
+        <input type="text" id="name" name="name" placeholder="James Smith" required />
+
+        <div class="checkbox-group">
+          <label for="cleared">Is the candidate cleared?</label>
+          <div class="checkbox-container">
+            <input type="radio" name="cleared" id="cleared" value="cleared" required />
+            <span>Cleared</span>
+          </div>
+          <div class="checkbox-container">
+            <input type="radio" name="cleared" id="notcleared" value="notcleared" />
+            <span>Not Cleared</span>
+          </div>
+        </div>
+
+        <label for="number">How professional is the candidate?</label>
+        <input type="number" id="number" name="number" min="1" max="5" placeholder="1-5" />
+
+        <div class="checkbox-group">
+          <label for="technicalknowledge">Technical Knowledge (skills, aptitude, certifications, program management)</label>
+          <div class="checkbox-container">
+            <input type="radio" name="technicalknowledge" id="technicalNot" value="Definitely Not" required />
+            <span>Definitely Not</span>
+          </div>
+          <div class="checkbox-container">
+            <input type="radio" name="technicalknowledge" id="technicalNo" value="No" />
+            <span>No</span>
+          </div>
+          <div class="checkbox-container">
+            <input type="radio" name="technicalknowledge" id="technicalUtE" value="Unable to Evaluate" />
+            <span>Unable to Evaluate</span>
+          </div>
+        </div>
+
+        <label for="dropdown">To hire or not to hire.</label>
+        <select name="Hire" id="dropdown" required>
+          <option value="" disabled selected>Select one</option>
+          <option value="Hire">Hire</option>
+          <option value="Maybe Hire">Maybe Hire</option>
+          <option value="Don't Hire">Don't Hire</option>
         </select>
-        <p>Notes</p>
-        <textarea name="notes" id="notes" cols="30" rows="5"></textarea>
-        <button id="submit" type="submit">
-            Submit
-        </button>
+        <label for="notes">Notes</label>
+        <textarea name="notes" id="notes" rows="5"></textarea>
+      </fieldset>
+      <button id="submit" type="submit">Submit</button>
     </form>
+  </body>
 </html>
